@@ -42,7 +42,15 @@ public class Factory {
 
         if (partType == PartType.COMPONENTS){
 
-            return new Components(id, name);
+            this.receivingStock.insert(new Components(id, name), 1);
+        }
+        else if (partType == PartType.RESOURCE){
+
+            this.receivingStock.insert(new Resource(id, name), 1);
+        }
+        else if (partType == PartType.SINGLE_COMPONENT){
+
+            this.receivingStock.insert(new SingleComponent(id, name), 1);
         }
     }
 }

@@ -28,6 +28,7 @@ public class Purchasing implements Observation{
             throw new IllegalArgumentException("count has to be bigger than 0!");
         }
 
+        // .....
     }
 
     public ReceivingStock getStock(){

@@ -1,5 +1,7 @@
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  * Created by tomgr on 29.07.2016.
@@ -7,7 +9,7 @@ import java.util.TreeMap;
 public abstract class Stock {
 
     Map<Part, Integer> parts = new TreeMap<Part, Integer>();
-    Observation observers;
+    Set<Observation> observers = new TreeSet<Observation>();
 
     public Stock(){
 
@@ -89,6 +91,7 @@ public abstract class Stock {
             throw new NullPointerException("Observer cannot be NULL!");
         }
 
+        this.observers.add(observer);
     }
 
     public void notify(Part part) throws NullPointerException{

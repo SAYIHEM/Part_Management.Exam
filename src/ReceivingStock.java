@@ -82,4 +82,14 @@ public class ReceivingStock extends Stock{
             return true;
         }
     }
-}
+
+    public void notify(Part part){
+
+        for (Observation observer:
+             this.observers) {
+
+            observer.alarm(part);
+        }
+
+        }
+    }
